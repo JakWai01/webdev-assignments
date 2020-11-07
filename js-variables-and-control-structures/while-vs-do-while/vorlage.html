@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>while vs. do-while</title>
+
+<script>
+  let x = 9;
+
+  while (x < 9 && x > 0) {
+    x--;
+    console.log("x in while-schleife: " + x);
+  }
+  console.log("x nach while-schleife: " + x);
+
+  x = 9;
+  do {
+    x--;
+    console.log("x in do-while-schleife: " + x);
+  } while (x < 9 && x > 0);
+
+  console.log("x nach do-while-schleife: " + x);
+</script>

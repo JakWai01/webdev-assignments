@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Switch, in Case Corona</title>
+
+<script>
+  function adviceFunction() {
+    /* TODO:
+    
+    expected Outputs:
+      Toilettenpapier: Sorry, keine Chance!
+      Eier: Versuchs morgen nochmal
+      Schokolade: Iss nicht aus Langeweile!
+      Äpfel: Gute Wahl :)
+      Birnen: Gute Wahl :)
+
+      bei anderen Eingaben: Haben wir nicht, bleib Zuhause!
+
+    Achtung: bitte nicht zwei mal "Gute Wahl :)" im Code schreiben ;)"
+    
+    */
+
+    
+
+    switch(document.getElementById("myInput").value) {
+      case "Toilettenpapier": console.log("Sorry, keine Chance!")
+      break
+      case "Eier": console.log("Versuchs morgen nochmal") 
+      break
+      case "Schokolade": console.log("Iss nicht aus Langeweile!")
+      break
+      case "Aepfel": console.log("Gute Wahl :D")
+      break
+      case "Birnen": console.log("Gute Wahl :D")
+      break
+      default: console.log("Haben wir nicht, bleib Zuhause")
+    }
+  }
+</script>
+
+<div class="wrapper">
+  <p>Was möchtest du einkaufen? Toilettenpapier, Eier, Schokolade, Äpfel oder Birnen?</p>
+
+  <div class="input-wrapper">
+    <input id="myInput" type="text">
+    <button onclick="adviceFunction()">kaufen</button>
+  </div>
+
+  <p id="output"></p>
+</div>
+
+<style>
+  body { min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .wrapper { padding: 20px; border: 1px solid #eee;
+    display: flex; flex-direction: column; align-items: center; }
+  .input-wrapper { display: flex; flex-direction: row; }
+</style>
