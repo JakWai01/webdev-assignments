@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Artikel filtern und Preis aufsummieren</title>
+
+<main>
+</main>
+
+<script src="articles.js"></script>
+<script>
+  notebooks = []
+  
+  articles.map(a => {
+    if (a.type === "notebook") {
+      notebooks.push(a)
+    }
+  })
+
+  price = notebooks.map(a => a.price).reduce((accumulator,currentValue) => accumulator + currentValue)
+  console.log(price)
+
+  console.log(notebooks)  
+
+  names = []
+
+  notebooks.map((a) => names.push(a.name))
+
+  console.log(names)
+
+  
+</script>

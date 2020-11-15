@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Artikel sortieren</title>
+
+<main>
+</main>
+
+<script src="articles.js"></script>
+<script>
+  articles.sort((a,b) => {
+    return b.price - a.price
+  })
+
+  articles.sort((a,b) => {
+    return (a.name).localeCompare(b.name)
+  })
+
+  console.log(articles)
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Einen Artikel eines kleinen Online-Shops anzeigen</title>
+
+<main>
+  <dl>
+    
+  </dl>
+  
+</main>
+
+<script src="articles.js"></script>
+<script>
+  console.log(articles.length)
+  console.log(articles)
+  console.log(articles[3].name)
+  console.log(Object.keys(articles[3]))
+  console.log(articles[0].keys)
+  console.log(Object.keys(articles[0])[0])
+  console.log(Object.keys(articles[3]).length)
+  console.log(articles[0].price)
+  var i;
+  var j;
+  var k;
+
+  
+
+  // console.log(articles)
+
+
+  // for (i = 0; i < articles.length; i++) {
+  //   if (i != 2) {
+  //     for (j = 0; j < Object.keys(articles[0]).length; j++) {
+  //     document.querySelector('main').innerHTML += `<dt>${Object.keys(articles[i])[j]}</dt><dd>${articles[i][Object.keys(articles[i])[j]]}</dd>`
+  //     }
+  //     document.querySelector('main').innerHTML += `<hr></hr>`
+  //   }
+    
+
+  // }
+
+  // articles.map(a => {
+  //   document.querySelector('main').innerHTML += `<dt>${Object.keys(a)[0]}</dt><dd>${a.name}</dd>`
+  // })
+
+articles.map(a => console.log(a))
+
+articles.map(a => {
+    for (j = 0; j < Object.keys(articles[0]).length; j++) {
+      document.querySelector('main').innerHTML += `<dt>${Object.keys(a)[j]}</dt><dd>${a[Object.keys(a)[j]]}</dd>`
+    }
+      document.querySelector('main').innerHTML += `<hr></hr>`
+})
+
+
+console.log(articles)
+  
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Optional: Ein kleines Spiel</title>
+<style>
+  body { font-family: sans-serif; }
+  canvas { border: 1px solid gray; }
+</style>
+
+<p>Click to place a bomb. Once it explodes it will destroy all gray circles nearby.</p>
+<p>As few gray circles as possible should reach the left side! Circles that reached the left side: <strong id=target-counter>0</strong></p>
+<canvas width="800" height="600"></canvas>
+
+<script src="game.js"></script>
+<script>
+  function onGameClick(x, y) {
+    // TODO: Hier eine neue Bombe an den Koordinaten x,y erzeugen
+  }
+
+  function onBombExplosion(bomb) {
+    // TODO: Alle GameObjets von type 'target' suchen die im Radius der Bombe sind
+    // TODO: Gefundene GameObjects zu dem globalen Array gameObjectThatDiedThisFrame hinzufügen
+  }
+  
+  function onTargetLeave(target) {
+    const counterElement = document.querySelector("#target-counter")
+    counterElement.textContent = parseInt(counterElement.textContent, 10) + 1
+  }
+</script>
