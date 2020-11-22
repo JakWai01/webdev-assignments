@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<title>class für einen Counter Button</title>
+
+<script>
+    // Your code goes here
+    class MyCounter extends HTMLElement{
+        
+        constructor(count = 0) {
+            super()
+            this.count = count
+            onclick = () => {
+                count = count + 1
+                console.log(count)
+                this.render(count)
+            }
+        }
+        render = (count) => {
+            if (count >= 10) {
+                if (Math.random() >= 0.5) {
+                    return this.innerText = `😺 count: ${count}`
+                }
+                else {
+                    return this.innerText = `🐶 count: ${count}`
+                }
+                
+            }
+            if (count >= 5) {
+                return this.innerText = `🙂 count: ${count}`
+            }
+            if (count >= 2) {
+                return this.innerText = `🤔 count: ${count}`
+            }
+            else {
+                return this.innerText = `😐 count: ${count}`
+            }
+            
+        }
+
+        connectedCallback = () => render()
+    } 
+    window.customElements.define('my-counter', MyCounter);
+</script>
+
+<my-counter>blub</my-counter>
+
+<style>
+    my-counter { display: inline-block; margin: 1em; padding: 7px 10px; font-size: 1.5em; background: lightgray; cursor: pointer; }
+</style>

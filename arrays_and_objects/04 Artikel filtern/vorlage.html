@@ -9,11 +9,13 @@
 <script>
   notebooks = []
   
-  articles.map(a => {
-    if (a.type === "notebook") {
-      notebooks.push(a)
-    }
-  })
+  // articles.map(a => {
+  //   if (a.type === "notebook") {
+  //     notebooks.push(a)
+  //   }
+  // })
+
+  notebooks = articles.filter(a => a.type == 'notebook')
 
   price = notebooks.map(a => a.price).reduce((accumulator,currentValue) => accumulator + currentValue)
   console.log(price)
