@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>RegExp</title>
 
-<label>Matrikel-Nummer <input type=text placeholder="z.B. ab123" pattern="insert your pattern here"></label>
+<label>Matrikel-Nummer <input type=text placeholder="z.B. ab123" pattern="^#[0-9]+"></label>
 <style>
     input:invalid { color: red; }
 </style>
@@ -17,4 +17,7 @@ Edward> Oh, never mind
 </pre>
 <script>
     // Your code goes here
+    console.log(document.querySelector('pre').innerText)
+    document.querySelector('pre').innerText.replaceAll(/@[A-Z][a-z]+/g, `<a href="/users/UserName">@UserName</a>`)
+    document.querySelector('pre').innerText.replaceAll(/#[1-9]+/g, `<a href="/issues/issueId">#issueId</a>`)
 </script>
