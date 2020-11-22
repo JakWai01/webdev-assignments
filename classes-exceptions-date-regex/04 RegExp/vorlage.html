@@ -18,6 +18,10 @@ Edward> Oh, never mind
 <script>
     // Your code goes here
     console.log(document.querySelector('pre').innerText)
-    document.querySelector('pre').innerText.replaceAll(/@[A-Z][a-z]+/g, `<a href="/users/UserName">@UserName</a>`)
-    document.querySelector('pre').innerText.replaceAll(/#[1-9]+/g, `<a href="/issues/issueId">#issueId</a>`)
+    
+    document.querySelector('pre').innerHTML = document.querySelector('pre').innerHTML.replaceAll(/@[A-Z][a-z]+/g,`<a href="/users/UserName">@UserName</a>`)
+    document.querySelector('pre').innerHTML = document.querySelector('pre').innerHTML.replaceAll(/#[1-9]+/g, `<a href="/issues/issueId">#issueId</a>`)
+    
+    
+        
 </script>
