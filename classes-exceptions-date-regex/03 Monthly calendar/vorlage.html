@@ -29,9 +29,20 @@
     const now = new Date()
     console.log(`${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`)
     now.toLocaleString() // → '11/3/2020, 11:35:00 AM')
-    console.log(now)
+    console.log(events[0].day)
 
-    for ()
+    for (let i = 1; i <= now.getDate(); i++) {
+        const day = new Date(`11/${i}/2020`)
+        document.querySelector('dl').innerHTML += `<dt>${day.toLocaleDateString()}</dt>`
+
+        events.forEach(event => {
+            if (event.day === i) {
+                 document.querySelector('dl').innerHTML += `<dd>${event.name}</dd>`
+            }
+        })
+        
+        
+    }
 
     
 </script>
