@@ -4,7 +4,34 @@
 
 <script>
   function validate() {
-    // Your code goes here
+
+    try {
+      if ((document.getElementById("inp").value).length === 0) {
+        throw new Error("Panic!")
+        throw "Panic!"
+      }
+      if (isNaN(document.getElementById("inp").value)) {
+        throw new Error("Panic!")
+        throw "Panic!"
+      }
+      if (parseInt(document.getElementById("inp").value) < 5 || parseInt(document.getElementById("inp").value) > 10) {
+        throw new Error("Panic!")
+        throw "Panic!"
+      } 
+      else {
+        console.log(`Input is ${document.getElementById("inp").value}`)
+      }
+
+    } catch(error) {
+      console.log(`Input is ${error}`)
+    } finally {
+      document.getElementById("inp").value = ""
+    }
+      
+    
+    
+
+    
   }
 </script>
 
