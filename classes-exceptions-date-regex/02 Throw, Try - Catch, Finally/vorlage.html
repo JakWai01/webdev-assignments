@@ -11,19 +11,21 @@
         throw "Panic!"
       }
       if (isNaN(document.getElementById("inp").value)) {
-        throw new Error("Panic!")
-        throw "Panic!"
+        throw new Error("NOT NUMBER")
+        throw "NOT NUMBER"
       }
       if (parseInt(document.getElementById("inp").value) < 5 || parseInt(document.getElementById("inp").value) > 10) {
         throw new Error("Panic!")
         throw "Panic!"
       } 
       else {
-        console.log(`Input is ${document.getElementById("inp").value}`)
+        document.querySelector('p#msg').textContent = `Input is ${document.getElementById("inp").value}`
+        //console.log(`Input is ${document.getElementById("inp").value}`)
       }
 
     } catch(error) {
-      console.log(`Input is ${error}`)
+      //console.log(`Input is ${error}`)
+      document.querySelector('p#msg').textContent = `Input is : ${error.message}`
     } finally {
       document.getElementById("inp").value = ""
     }

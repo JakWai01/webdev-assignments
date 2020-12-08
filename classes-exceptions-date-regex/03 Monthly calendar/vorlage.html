@@ -8,31 +8,36 @@
 <script>
     // Von https://www.hdm-stuttgart.de/intranet/terminkalender
     const events = [
-        { year: 2020, month: 11, day:  6, name: 'Gemeinsame Sitzung des Senats und des Hochschulrats der Hochschule der Medien' },
-        { year: 2020, month: 11, day: 10, name: 'Virtuelle Gruppenberatung für HdM-Studis: Nicht-bestandene Prüfung(en) und was jetzt?' },
-        { year: 2020, month: 11, day: 12, name: 'Virtueller Infoabend berufsbegleitende Master- & Weiterbildungsangebote' },
-        { year: 2020, month: 11, day: 16, name: 'Ende der Frist für zahlreiche Anträge' },
-        { year: 2020, month: 11, day: 17, name: 'KI in unserer Gesellschaft (Webinar)' },
-        { year: 2020, month: 11, day: 17, name: 'Infoveranstaltung "Praktikum im Ausland"' },
-        { year: 2020, month: 11, day: 17, name: 'Virtuelle Gruppenberatung für HdM-Studis: Prüfungsplanung, -vorbereitung und -stress' },
-        { year: 2020, month: 11, day: 18, name: 'Studieninfotag 2020' },
-        { year: 2020, month: 11, day: 18, name: 'Vollversammlung' },
-        { year: 2020, month: 11, day: 23, name: 'Online-Anmeldung der Prüfungsleistungen und schriftliche Anmeldung von ersten Wiederholungsprüfungen' },
-        { year: 2020, month: 11, day: 23, name: 'Die Langen Nächte der aufgeschobenen Hausarbeiten' },
-        { year: 2020, month: 11, day: 24, name: 'Open Educational Resources: Chancen und Herausforderungen im Hochschulbereich (Webinar)' },
-        { year: 2020, month: 11, day: 26, name: 'International Day' },
-        { year: 2020, month: 11, day: 26, name: 'HdM auf Infoevent Einstieg München Online' }
+        { year: 2020, month: 12, day:  6, name: 'Gemeinsame Sitzung des Senats und des Hochschulrats der Hochschule der Medien' },
+        { year: 2020, month: 12, day: 10, name: 'Virtuelle Gruppenberatung für HdM-Studis: Nicht-bestandene Prüfung(en) und was jetzt?' },
+        { year: 2020, month: 12, day: 12, name: 'Virtueller Infoabend berufsbegleitende Master- & Weiterbildungsangebote' },
+        { year: 2020, month: 12, day: 16, name: 'Ende der Frist für zahlreiche Anträge' },
+        { year: 2020, month: 12, day: 17, name: 'KI in unserer Gesellschaft (Webinar)' },
+        { year: 2020, month: 12, day: 17, name: 'Infoveranstaltung "Praktikum im Ausland"' },
+        { year: 2020, month: 12, day: 18, name: 'Studieninfotag 2020' },
+        { year: 2020, month: 12, day: 18, name: 'Vollversammlung' },
+        { year: 2020, month: 12, day: 23, name: 'Online-Anmeldung der Prüfungsleistungen und schriftliche Anmeldung von ersten Wiederholungsprüfungen' },
+        { year: 2020, month: 12, day: 23, name: 'Die Langen Nächte der aufgeschobenen Hausarbeiten' },
+        { year: 2020, month: 12, day: 24, name: 'Open Educational Resources: Chancen und Herausforderungen im Hochschulbereich (Webinar)' },
+        { year: 2020, month: 12, day: 26, name: 'International Day' },
+        { year: 2020, month: 12, day: 26, name: 'HdM auf Infoevent Einstieg München Online' }
     ]
     const dl = document.querySelector('dl')
     
     // Your code goes here
     const now = new Date()
+    
+    const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1)
+    console.log(now, firstDayOfMonth)
     console.log(`${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`)
     now.toLocaleString() // → '11/3/2020, 11:35:00 AM')
     console.log(events[0].day)
 
-    for (let i = 1; i <= now.getDate(); i++) {
-        const day = new Date(`11/${i}/2020`)
+    // Jahr, naechster Monag, Tag 0 --> also letzter Tag des letzten Monats
+    const numberOfDaysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
+
+    for (let i = 1; i <= numberOfDaysInMonth ;i++) {
+        const day = new Date(`12/${i}/2020`)
         document.querySelector('dl').innerHTML += `<dt>${day.toLocaleDateString()}</dt>`
 
         events.forEach(event => {

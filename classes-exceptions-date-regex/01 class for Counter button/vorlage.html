@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <title>class für einen Counter Button</title>
 
+
+
 <script>
     // Your code goes here
-    class MyCounter extends HTMLElement{
-        
-        constructor(count = 0) {
+
+    // Soller Solution
+    class MyCounter extends HTMLElement {
+        count = 0
+
+        constructor() {
             super()
-            this.count = count
-            onclick = () => {
-                count = count + 1
-                console.log(count)
-                this.render(count)
+            this.onclick = () => {
+                this.count += 1
+                this.render()
             }
-        }
-        render = (count) => {
-            if (count >= 10) {
-                if (Math.random() >= 0.5) {
-                    return this.innerText = `😺 count: ${count}`
-                }
-                else {
-                    return this.innerText = `🐶 count: ${count}`
-                }
-                
-            }
-            if (count >= 5) {
-                return this.innerText = `🙂 count: ${count}`
-            }
-            if (count >= 2) {
-                return this.innerText = `🤔 count: ${count}`
-            }
-            else {
-                return this.innerText = `😐 count: ${count}`
-            }
-            
         }
 
-        connectedCallback = () => render()
-    } 
+        render() {
+            this.innerText = `count: ${this.count}`
+        }
+
+        connectedCallback() {
+               this.render()
+           }
+    }
+    // end of Soller Solution
+    // class MyCounter extends HTMLElement{
+        
+    //     constructor(count = 0) {
+    //         super()
+    //         this.count = count
+    //         this.onclick = () => {
+    //             count = count + 1
+    //             console.log(count)
+    //             this.render(count)
+    //         }
+    //     }
+    //     render = (count) => {
+    //         if (count >= 10) {
+    //             if (Math.random() >= 0.5) {
+    //                 return this.innerText = `😺 count: ${count}`
+    //             }
+    //             else {
+    //                 return this.innerText = `🐶 count: ${count}`
+    //             }
+                
+    //         }
+    //         if (count >= 5) {
+    //             return this.innerText = `🙂 count: ${count}`
+    //         }
+    //         if (count >= 2) {
+    //             return this.innerText = `🤔 count: ${count}`
+    //         }
+    //         else {
+    //             return this.innerText = `😐 count: ${count}`
+    //         }
+            
+    //     }
+
+    //     connectedCallback = () => this.render()
+    // } 
     window.customElements.define('my-counter', MyCounter);
 </script>
 

@@ -1,0 +1,18 @@
+<textarea id="text_gesamt"></textarea>
+<button id="buton">Button</button>
+<pre id="text"></pre>
+
+
+<script>
+    document.getElementById("buton").addEventListener("mousedown", clearLine)
+    document.getElementById("text_gesamt").addEventListener("keypress", addKey)
+
+    function addKey(event) {
+            document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + event.key
+    }
+
+    function clearLine(event) {
+            document.getElementById("text").innerHTML = document.getElementById("text").innerHTML + "\n"
+            document.getElementById("text_gesamt").value = ""
+    }
+</script>
