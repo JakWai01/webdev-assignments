@@ -4,9 +4,7 @@
     <meta charset=utf-8>
     <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css">
     <style> body {margin-left:20px; background-color:rgb(240,240,240)}</style>
-    <script>
-        // your code goes here
-    </script>
+    
 </head>
 <body>
     <h2>Farbänderung bei MouseMove</h2>
@@ -15,3 +13,8 @@
     </div>
 </body>
 </html>
+<script>
+        // your code goes here
+        document.getElementById("canvas").addEventListener("mousemove", () => document.getElementById("canvas").style.backgroundColor = "red")
+
+    </script>
