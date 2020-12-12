@@ -12,4 +12,13 @@
 
 <script>
   // Your code goes here
+  var btn = document.createElement("h1");  
+  btn.innerHTML = "Heading"                 
+  document.getElementsByClassName("wrapper")[0].insertBefore(btn, document.getElementById("placeholder")); 
+
+
+  document.getElementById("placeholder").parentNode.replaceChild(document.createElement("img"), document.getElementById("placeholder"))
+  document.getElementsByTagName("img")[0].setAttribute("src", "./tribore.png")
+  
+  
 </script>
