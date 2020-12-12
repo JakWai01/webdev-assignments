@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Document Object Model - Wikipedia</title>
+<style>
+	html { margin: 0; padding: 0; background: #f6f6f6; }
+	body { margin: 1em 4em; padding: 1em; font: 14px sans-serif; background: white; box-shadow: 0 0 5px rgba(0,0,0, 0.25); }
+
+	h1 { font: 1.8em normal serif; margin: 0 0 0.25em 0; padding: 0; border-bottom: 1px solid #a2a9b1; }
+	h1 + p { font-size: 0.8em; margin: 0; padding: 0; }
+	h2 { font: 1.5em normal serif; margin: 1em 0 0.25em 0; padding: 0; border-bottom: 1px solid #a2a9b1; }
+	h3 { font-size: 1.2em; margin: 0.8em 0 0 0; padding: 0; }
+
+	p { margin: 0.5em 0; padding: 0; }
+	p, li { line-height: 1.6; }
+	
+	a { color: #0645ad; text-decoration: none; }
+	a:hover, a:focus, a:active { text-decoration: underline; }
+	a:active { color: #faa700; }
+	a:visited { color: #636; }
+</style>
+
+<h1 id="firstHeading">Document Object Model</h1>
+<p>From <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Wikipedia, the free encyclopedia</a></p>
+
+<ul class=toc></ul>
+
+<p>The <b>Document Object Model</b> (<b>DOM</b>) is a <a href="/wiki/Cross-platform" title="Cross-platform">cross-platform</a> and <a href="/wiki/Language-independent_specification" title="Language-independent specification">language-independent</a> interface that treats an <a href="/wiki/XML" title="XML">XML</a> or <a href="/wiki/HTML" title="HTML">HTML</a> document as a <a href="/wiki/Tree_structure" title="Tree structure">tree structure</a> wherein each <a href="/wiki/Node_(computer_science)" title="Node (computer science)">node</a> is an <a href="/wiki/Object_(computer_science)" title="Object (computer science)">object</a> representing a part of the document. The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree; with them one can change the structure, style or content of a document. Nodes can have <a href="/wiki/Event_handler" title="Event handler">event handlers</a> attached to them. Once an event is triggered, the event handlers get executed.<sup id="cite_ref-Introduction_2-0" class="reference"><a href="#cite_note-Introduction-2">[2]</a></sup></p>
+<p>The principal standardization of the DOM was handled by the <a href="/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">World Wide Web Consortium</a>, which last developed a recommendation in 2004. <a href="/wiki/WHATWG" title="WHATWG">WHATWG</a> took over the development of the standard, publishing it as a <a href="/wiki/Living_document" title="Living document">living document</a>. The W3C now publishes stable snapshots of the WHATWG standard.</p>
+
+<h2 id="History">History</h2>
+<p>The history of the Document Object Model is intertwined with the history of the "<a href="/wiki/Browser_wars" title="Browser wars">browser wars</a>" of the late 1990s between <a href="/wiki/Netscape_Navigator" title="Netscape Navigator">Netscape Navigator</a> and <a href="/wiki/Microsoft_Internet_Explorer" title="Microsoft Internet Explorer">Microsoft Internet Explorer</a>, as well as with that of <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a> and <a href="/wiki/JScript" title="JScript">JScript</a>, the first <a href="/wiki/Scripting_language" title="Scripting language">scripting languages</a> to be widely implemented in the <a href="/wiki/JavaScript_engine" title="JavaScript engine">JavaScript engines</a> of <a href="/wiki/Web_browser" title="Web browser">web browsers</a>.</p>
+<p>JavaScript was released by <a href="/wiki/Netscape_Communications" title="Netscape Communications">Netscape Communications</a> in 1995 within Netscape Navigator 2.0. Netscape's competitor, <a href="/wiki/Microsoft" title="Microsoft">Microsoft</a>, released <a href="/wiki/Internet_Explorer_3" title="Internet Explorer 3">Internet Explorer 3.0</a> the following year with a reimplementation of JavaScript called JScript. JavaScript and JScript let <a href="/wiki/Web_developer" title="Web developer">web developers</a> create web pages with <a href="/wiki/Client-side" title="Client-side">client-side</a> interactivity. The limited facilities for detecting user-generated <a href="/wiki/Event_(computing)" title="Event (computing)">events</a> and modifying the HTML document in the first generation of these languages eventually became known as "DOM Level 0" or "Legacy DOM." No independent standard was developed for DOM Level 0, but it was partly described in the specifications for <a href="/wiki/HTML4" title="HTML4">HTML 4</a>.</p>
+<p>Legacy DOM was limited in the kinds of <a href="/wiki/HTML_element" title="HTML element">elements</a> that could be accessed. <a href="/wiki/Form_(web)" title="Form (web)">Form</a>, <a href="/wiki/Hyperlink" title="Hyperlink">link</a> and image elements could be referenced with a hierarchical name that began with the root document object. A hierarchical name could make use of either the names or the sequential index of the traversed elements. For example, a <a href="/wiki/Text_box" title="Text box">form input element</a> could be accessed as either <code>document.formName.inputName</code> or <code>document.forms[0].elements[0]</code>.</p>
+<p>The Legacy DOM enabled client-side form validation and the popular "<a href="/wiki/Rollover_(web_design)" title="Rollover (web design)">rollover</a>" effect.</p>
+<p>In 1997, Netscape and Microsoft released version 4.0 of Netscape Navigator and Internet Explorer respectively, adding support for <a href="/wiki/Dynamic_HTML" title="Dynamic HTML">Dynamic HTML</a> (DHTML) functionality enabling changes to a loaded HTML document. DHTML required extensions to the rudimentary document object that was available in the Legacy DOM implementations. Although the Legacy DOM implementations were largely compatible since JScript was based on JavaScript, the DHTML DOM extensions were developed in parallel by each browser maker and remained incompatible. These versions of the DOM became known as the "Intermediate DOM."</p>
+<p>After the standardization of <a href="/wiki/ECMAScript" title="ECMAScript">ECMAScript</a>, the <a href="/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">W3C</a> DOM Working Group began drafting a standard DOM specification. The completed specification, known as "DOM Level 1", became a W3C Recommendation in late 1998. By 2005, large parts of W3C DOM were well-supported by common ECMAScript-enabled browsers, including <a href="/wiki/Microsoft_Internet_Explorer_6" title="Microsoft Internet Explorer 6">Microsoft Internet Explorer version 6</a> (from 2001), <a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a>, <a href="/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a> and <a href="/wiki/Gecko_(layout_engine)" title="Gecko (layout engine)">Gecko</a>-based browsers (like <a href="/wiki/Mozilla_Application_Suite" title="Mozilla Application Suite">Mozilla</a>, <a href="/wiki/Mozilla_Firefox" title="Mozilla Firefox">Firefox</a>, <a href="/wiki/SeaMonkey" title="SeaMonkey">SeaMonkey</a> and <a href="/wiki/Camino_(web_browser)" title="Camino (web browser)">Camino</a>).</p>
+
+<h2 id="Standards">Standards</h2>
+<p>The <a href="/wiki/W3C" title="W3C">W3C</a> DOM Working Group published its final recommendation and subsequently disbanded in 2004. Development efforts migrated to the <a href="/wiki/WHATWG" title="WHATWG">WHATWG</a>, which continues to maintain a living standard.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> In 2009, the Web Applications group reorganized DOM activities at the W3C.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup> In 2013, due to a lack of progress and the impending release of <a href="/wiki/HTML5" title="HTML5">HTML5</a>, the DOM Level 4 specification was reassigned to the <a href="/wiki/HTML_Working_Group" title="HTML Working Group">HTML Working Group</a> to expedite its completion.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup> Meanwhile, in 2015, the Web Applications group was disbanded and DOM stewardship passed to the Web Platform group.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup> Beginning with the publication of DOM Level 4 in 2015, the W3C creates new recommendations based on snapshots of the WHATWG standard.</p>
+<ul>
+	<li>DOM Level 1 provided a complete model for an entire HTML or <a href="/wiki/XML" title="XML">XML</a> document, including the means to change any portion of the document.</li>
+	<li>DOM Level 2 was published in late 2000. It introduced the <code>getElementById</code> function as well as an <a href="/wiki/DOM_Events" title="DOM Events">event model</a> and support for <a href="/wiki/XML_namespace" title="XML namespace">XML namespaces</a> and CSS.</li>
+	<li>DOM Level 3, published in April 2004, added support for <a href="/wiki/XPath" title="XPath">XPath</a> and keyboard <a href="/wiki/Event_handling" title="Event handling">event handling</a>, as well as an interface for <a href="/wiki/Serialization" title="Serialization">serializing</a> documents as XML.</li>
+	<li>DOM Level 4 was published in 2015. It is a snapshot of the WHATWG living standard.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup></li>
+</ul>
+
+<h2 id="Applications">Applications</h2>
+
+<h3 id="Web_browsers">Web browsers</h3>
+<p>To <a href="/wiki/Web_browser_engine" title="Web browser engine">render</a> a document such as a HTML page, most web browsers use an internal model similar to the <b>DOM</b>. The nodes of every document are organized in a <a href="/wiki/Tree_structure" title="Tree structure">tree structure</a>, called the <i>DOM tree</i>, with the topmost node named as "Document object". When an HTML page is rendered in browsers, the browser downloads the HTML into local memory and automatically parses it to display the page on screen.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup></p>
+
+<h3 id="JavaScript">JavaScript</h3>
+<p>When a web page is loaded, the browser creates a Document Object Model of the page, which is an object oriented representation of an HTML document that acts as an interface between JavaScript and the document itself. This allows the creation of dynamic web pages,<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup> because within a page JavaScript can:</p>
+<ul>
+	<li>add, change, and remove any of the HTML elements and attributes</li>
+	<li>change any of the CSS styles</li>
+	<li>react to all the existing events</li>
+	<li>create new events</li>
+</ul>
+
+<h2 id="Implementations">Implementations</h2>
+<p>Because the DOM supports navigation in any direction (e.g., parent and previous sibling) and allows for arbitrary modifications, an implementation must at least buffer the document that has been read so far (or some parsed form of it).<sup id="cite_ref-10" class="reference"><a href="#cite_note-10">[10]</a></sup></p>
+
+<h3 id="Layout_engines">Layout engines</h3>
+<p class="note">See also: <a href="/wiki/Comparison_of_JavaScript_engines_(DOM_support)" title="Comparison of JavaScript engines (DOM support)">Comparison of JavaScript engines (DOM support)</a></p>
+<p>Web browsers rely on <a href="/wiki/Web_browser_engine" title="Web browser engine">layout engines</a> to parse HTML into a DOM. Some layout engines, such as <a href="/wiki/Trident_(layout_engine)" title="Trident (layout engine)">Trident/MSHTML</a>, are associated primarily or exclusively with a particular browser, such as Internet Explorer. Others, including <a href="/wiki/Blink_(layout_engine)" title="Blink (layout engine)">Blink</a>, <a href="/wiki/WebKit" title="WebKit">WebKit</a>, and <a href="/wiki/Gecko_(layout_engine)" title="Gecko (layout engine)">Gecko</a>, are shared by a number of browsers, such as <a href="/wiki/Google_Chrome" title="Google Chrome">Google Chrome</a>, <a href="/wiki/Opera_(web_browser)" title="Opera (web browser)">Opera</a>, <a href="/wiki/Safari_(web_browser)" title="Safari (web browser)">Safari</a>, and <a href="/wiki/Firefox" title="Firefox">Firefox</a>. The different layout engines implement the DOM standards to varying degrees of compliance.</p>
+
+<h3 id="Libraries">Libraries</h3>
+<p>DOM implementations:</p>
+<ul>
+	<li><a href="/wiki/Libxml2" title="Libxml2">libxml2</a></li>
+	<li><a href="/wiki/MSXML" title="MSXML">MSXML</a></li>
+	<li><a href="/wiki/Xerces" title="Xerces">Xerces</a> is a collection of DOM implementations written in C++, Java and Perl</li>
+	<li>XML for &lt;SCRIPT&gt; is a JavaScript-based DOM implementation<sup id="cite_ref-11" class="reference"><a href="#cite_note-11">[11]</a></sup></li>
+	<li><a href="https://github.com/PhpGt/Dom">PHP.Gt DOM</a> is a server-side DOM implementation based on <a href="/wiki/Libxml2" title="Libxml2">libxml2</a> and brings DOM level 4 compatibility<sup id="cite_ref-12" class="reference"><a href="#cite_note-12">[12]</a></sup> to the <a href="/wiki/PHP" title="PHP">PHP</a> programming language</li>
+	<li><a href="https://github.com/fgnass/domino/">Domino</a> is a Server-side (Node.js) DOM implementation based on Mozilla's dom.js. Domino is used in the <a href="/wiki/MediaWiki" title="MediaWiki">MediaWiki</a> stack with Visual Editor.</li>
+</ul>
+<p>APIs that expose DOM implementations:</p>
+<ul>
+	<li><a href="/wiki/Java_API_for_XML_Processing" title="Java API for XML Processing">JAXP</a> (Java API for XML Processing) is an API for accessing DOM providers</li>
+	<li><a href="/wiki/Lazarus_(IDE)" title="Lazarus (IDE)">Lazarus</a> (<a href="/wiki/Free_Pascal" title="Free Pascal">Free Pascal</a> IDE) contains two variants of the DOM - with UTF-8 and ANSI format</li>
+</ul>
+<p>Inspection tools:</p>
+<ul>
+	<li><a href="/wiki/DOM_Inspector" title="DOM Inspector">DOM Inspector</a> is a web developer tool</li>
+</ul>
+
+<h2 id="Trying_to_hack_you">&lt;img src="x" onerror="alert(`This shouldn't happen, user textContent instead!`)"&gt;</h2>
+<p>Just something to make sure you paid attention. If you see this as a link in the table of contents everything is fine. But you shouldn't get an alert dialog about this.</p>
+
+<h2 id="References">References</h2>
+<ol class="references" style="list-style-type: decimal;">
+	<li id="cite_note-1">All versioning refers to W3C DOM only.</li>
+	<li id="cite_note-Introduction-2"><cite class="citation web cs1"><a href="http://www.w3.org/DOM/#what">"Document Object Model (DOM)"</a>. <a rel="nofollow" class="external free" href="http://www.w3.org/">http://www.w3.org/</a>: W3C<span class="reference-accessdate">. Retrieved <span class="nowrap">2012-01-12</span></span>. <q>The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents.</q></cite></li>
+	<li id="cite_note-3"><cite class="citation web cs1"><a href="https://dom.spec.whatwg.org/">"DOM Standard"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-4"><cite class="citation web cs1"><a href="https://www.w3.org/DOM/">"W3C Document Object Model"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-5"><cite id="CITEREF(plh@w3.org)" class="citation web cs1">(plh@w3.org), Philippe Le Hegaret. <a href="https://lists.w3.org/Archives/Public/public-html-admin/2013Sep/0129.html">"New Charter for the HTML Working Group from Philippe Le Hegaret on 2013-09-30 (public-html-admin@w3.org from September 2013)"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-6"><cite class="citation web cs1"><a href="https://www.w3.org/2008/webapps/wiki/PubStatus">"PubStatus - WEBAPPS"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-7"><cite class="citation web cs1"><a href="https://www.w3.org/TR/2015/REC-dom-20151119/">"W3C DOM4"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-8">"<a href="https://www.researchgate.net/publication/329502453_A_Survey_of_Techniques_for_Improving_Efficiency_of_Mobile_Web_Browsing">A Survey of Techniques for Improving Efficiency of Mobile Web Browsing</a>", Concurrency and Computation, 2018</li>
+	<li id="cite_note-9"><cite class="citation web cs1"><a href="https://www.w3schools.com/js/js_htmldom.asp">"JavaScript HTML DOM"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-10"><cite id="CITEREFKogent_Solutions_Inc.2008" class="citation book cs1">Kogent Solutions Inc. (2008). <a href="https://books.google.com/?id=HuSQGrRY7F4C"><i>Ajax Black Book, New Edition (With Cd)</i></a>. Dreamtech Press. p.&nbsp;40. <a href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a>&nbsp;<a href="/wiki/Special:BookSources/978-8177228380" title="Special:BookSources/978-8177228380"><bdi>978-8177228380</bdi></a>.</cite></li>
+	<li id="cite_note-11"><cite class="citation web cs1"><a href="http://xmljs.sourceforge.net/">"XML for &lt;SCRIPT&gt; Cross Platform XML Parser in JavaScript"</a><span class="reference-accessdate">. Retrieved <span class="nowrap">23 September</span> 2016</span>.</cite></li>
+	<li id="cite_note-12"><cite class="citation web cs1"><a href="https://php.gt/dom#features-at-a-glance">"The modern DOM API for PHP 7 projects"</a>.</cite></li>
+</ol>
+
+<h3 id="General_references">General references</h3>
+<ul>
+	<li><cite id="CITEREFFlanagan2006">Flanagan, David (2006). <span class="cs1-lock-limited" title="Free access subject to limited trial, subscription normally required"><a href="https://archive.org/details/javascript00libg_297"><i>JavaScript: The Definitive Guide</i></a></span>. O'Reilly &amp; Associates. pp.&nbsp;<a href="https://archive.org/details/javascript00libg_297/page/n310">312</a>–313. <a href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a>&nbsp;<a href="/wiki/Special:BookSources/0-596-10199-6" title="Special:BookSources/0-596-10199-6"><bdi>0-596-10199-6</bdi></a>.</cite></li>
+	<li><cite id="CITEREFKoch2001">Koch, Peter-Paul (May 14, 2001). <a href="https://web.archive.org/web/20170427220310/http://www.digital-web.com/articles/the_document_object_model/">"The Document Object Model: an Introduction"</a>. <i>Digital Web Magazine</i>. Archived from <a href="http://www.digital-web.com/articles/the_document_object_model/">the original</a> on April 27, 2017<span class="reference-accessdate">. Retrieved <span class="nowrap">January 10,</span> 2009</span>.</cite></li>
+	<li><cite id="CITEREFLe_Hégaret2002">Le Hégaret, Philippe (2002). <a href="http://www.w3.org/2002/07/26-dom-article.html">"The W3C Document Object Model (DOM)"</a>. World Wide Web Consortium<span class="reference-accessdate">. Retrieved <span class="nowrap">January 10,</span> 2009</span>.</cite></li>
+	<li><cite id="CITEREFGuisset">Guisset, Fabian. <a href="https://developer.mozilla.org/en/docs/DOM_Levels">"What does each DOM Level bring?"</a>. <i>Mozilla Developer Center</i>. Mozilla Project<span class="reference-accessdate">. Retrieved <span class="nowrap">January 10,</span> 2009</span>.</cite></li>
+</ul>
+
+<h2 id="External_links">External links</h2>
+<ul>
+	<li><a href="https://dom.spec.whatwg.org/">DOM Living Standard</a> by the WHATWG</li>
+	<li><a href="https://www.w3.org/DOM/">Original W3C DOM hub</a> by the W3C DOM Working Group (outdated)</li>
+	<li><a href="https://www.w3.org/WebPlatform/WG/">Web Platform Working Group</a> (current steward of W3C DOM)</li>
+</ul>
+
+<p>Text is available under the <a rel="license" href="/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply.</p>
+
+<script>
+	// Your code goes here
+</script>
