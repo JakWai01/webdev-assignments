@@ -123,4 +123,23 @@
 
 <script>
 	// Your code goes here
+	for (let i = 0; i < document.getElementsByTagName("h2").length; i++) {
+
+		let node = document.createElement("li")
+		
+		let textnode = document.createElement("a")
+		textnode.setAttribute("href", "#" + document.getElementsByTagName("h2")[i].id)
+		textnode.innerHTML = document.getElementsByTagName("h2")[i].innerHTML;
+		node.appendChild(textnode)
+
+		document.getElementsByClassName("toc")[0].appendChild(node)
+		
+	}
+
+	for (let i = 0; i < document.getElementsByTagName("a").length; i++) {
+				if (document.getElementsByTagName("a")[i].getAttribute("href").startsWith("/wiki/")) {
+						document.getElementsByTagName("a")[i].setAttribute("href", "https://en.wikipedia.org/wiki/" + document.getElementsByTagName("a")[i].getAttribute("href").substr(6,))
+				}
+			
+		}
 </script>
