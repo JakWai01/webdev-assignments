@@ -3,9 +3,6 @@
 <head>
     <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css">
     <style> body {margin-left:20px; background-color:rgb(240,240,240)}</style>
-    <script>
-        // your code goes here
-    </script>
 </head>
 <body>
     <h2>Farbänderung per Slider</h2>
@@ -19,3 +16,19 @@
              id="blue" oninput="changeColor('blue')"><br>
 </body>
 </html>
+
+<script>
+        // your code goes here
+
+        function changeColor(color) { 
+            if (color === 'red') {
+                document.getElementById("canvas").style.backgroundColor = "rgb(" + document.getElementById("red").value + "," + document.getElementById("green").value + "," + document.getElementById("blue").value + ")";
+            }
+            if (color === 'green') {
+                document.getElementById("canvas").style.backgroundColor = "rgb(" + document.getElementById("red").value + "," + document.getElementById("green").value + "," + document.getElementById("blue").value + ")";
+            }
+            if (color === 'blue') {
+                document.getElementById("canvas").style.backgroundColor = "rgb(" + document.getElementById("red").value + "," + document.getElementById("green").value + "," + document.getElementById("blue").value + ")";
+            }
+        }
+</script>
