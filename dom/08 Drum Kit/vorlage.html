@@ -11,17 +11,18 @@
 <script>
   // Your code goes here
   
-  document.addEventListener("keypress",playSound("kick"))
+  document.addEventListener("keydown",playSound(sound))
   // Die Funktion akzeptiert folgende Strings als Parameter: 'kick', 'hihat' und 'snare'
-  function playSound(sound) {
-    const audio = new Audio(`${sound}.mp3`)
-    audio.currentTime = 0
-    var promise = audio.play()
 
-    if (promise) {
-    //Older browsers may not return a promise, according to the MDN website
-    promise.catch(function(error) { console.error(error); });
-}
+  function playSound(sound) {
+    
+    // const audio = new Audio(`${sound}.mp3`)
+    // audio.currentTime = 0
+    // var promise = audio.play()
+    
+    if (sound === "b") {
+      console.log("br")
+    }
   }
 </script>
 <style>
