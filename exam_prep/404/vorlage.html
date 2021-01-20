@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<title>RegExp</title>
+
+<label>Matrikel-Nummer <input type=text placeholder="z.B. ab123" pattern="[a-z][a-z][1-9][1-9][1-9]"></label>
+<style>
+    input:invalid { color: red; }
+</style>
+
+<pre>
+Edward> Hey @Alice, have you seen #5791?
+Alice> No?
+Edward> Someone was really unhappy there. Thought it looked like #5717
+Alice> Yea, that's why I deleted it.
+Edward> What?!
+Alice> I created the issue… at night… after a 10h bughunt.
+Edward> Oh, never mind
+</pre>
+<script>
+    document.querySelector('pre').innerHTML = document.querySelector('pre').innerHTML.replaceAll(/@([\w\d]+)/ig, '<a href="/users/$1">@$1</a>')
+    document.querySelector('pre').innerHTML = document.querySelector('pre').innerHTML.replaceAll(/#([\d]+)/ig, '<a href="/issues/$1">#$1</a>')
+    
+</script>
