@@ -1,0 +1,49 @@
+<button> Promise</button>
+<button id="button"> Promise</button>
+<script>
+    // document.querySelector("button").addEventListener("click", async () => {
+    //     const prom1 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(1), Math.random() * 1000)
+    // })
+    // const prom2 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(2), Math.random() * 1000)
+    // })
+    // const prom3 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(3), Math.random() * 1000)
+    // })
+
+    // const results = await Promise.all([prom1, prom2, prom3])
+    // console.log('Promise.all ', results)
+    // })
+
+    // document.querySelector("#button").addEventListener("click", async () => {
+    //     const prom1 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(1), Math.random() * 1000)
+    // })
+    // const prom2 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(2), Math.random() * 1000)
+    // })
+    // const prom3 = new Promise((resolve, reject) => {
+    //     setTimeout(() => resolve(3), Math.random() * 1000)
+    // })
+
+    // const results = await Promise.race([prom1, prom2, prom3])
+    // console.log('Promise.all ', results)
+    // })
+    console.log('Start');
+
+      //simulate user login
+      function loginUser(email, passwort, callback) {
+        //simulate that the Login would take some time
+        setTimeout(() => {
+          console.log('now we have the data');
+          callback({ userEmail: email });
+        }, 1500);
+      }
+
+      const user = loginUser('jane.doe@web.de', 12345, (user) => {
+        console.log(user);
+      });
+
+      console.log('End');
+</script>

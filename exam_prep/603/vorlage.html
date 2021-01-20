@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style type="text/css">
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrapper {
+        padding: 20px;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img,
+      input {
+        width: 300px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul id="list"></ul>
+    </div>
+    <script>
+      const promise1 = Promise.resolve('Hello World');
+      const promise2 = 10;
+      const promise3 = new Promise((resolve, reject) =>
+        setTimeout(resolve, 2000, 'GoodBye')
+      );
+      const promise4 = fetch("https://jsonplaceholder.typicode.com/users").then((res) => res.json());
+       
+
+      Promise.all([promise1, promise2, promise3, promise4]).then((values) => console.log(values));
+    </script>
+  </body>
+</html>

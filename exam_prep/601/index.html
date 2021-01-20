@@ -1,0 +1,23 @@
+<script>
+    async function make() {
+        const res = await fetch("http://foo.mi.hdm-stuttgart.de:81/WDF/ajax_calculator_post", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            zahl1: document.querySelector("#z1").value,
+            zahl2: document.querySelector("#z2").value,
+            op: document.querySelector("#op").value
+        })
+    })
+    document.getElementsByTagName("p")[0].innerHTML = await res.text();
+    }
+    
+</script> 
+
+<input id="z1"></input>
+<input id="z2"></input>
+<input id="op"></input>
+<button onclick="make()">Calculate</button> 
+<p></p>
