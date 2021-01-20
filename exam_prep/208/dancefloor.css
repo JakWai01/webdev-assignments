@@ -1,0 +1,137 @@
+body {
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls {
+  margin-bottom: 40px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 10px;
+  color: #eee;
+  outline: none;
+  cursor: pointer;
+}
+
+button.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dancefloor {
+  display: flex;
+  flex-direction: column;
+  color: #444;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strobe {
+  margin: 10px;
+  width: 50px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strobe.on {
+  background: rgb(255, 255, 255);
+  animation: blinking 0.3s linear infinite;
+}
+
+.blinder {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blinder.on {
+  background: rgb(255, 255, 0);
+  animation: blinking 0.75s linear infinite;
+}
+
+.blinder:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.blinder:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.blinder:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.blinder:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.blinder:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+}
+
+.field {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: red;
+  color: #fff;
+}
+
+.green {
+  background-color: green;
+  color: #fff;
+}
+
+.blue {
+  background-color: blue;
+  color: #fff;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

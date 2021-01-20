@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="dancefloor.css" />
+    <script src="dancefloor.js"></script>
+    <script src="dancefloor-main.js"></script>
+  </head>
+  <body onload="start()">
+    <div class="controls">
+      <button id="black" onclick="toggle('black')">Black</button>
+      <button id="rgb" class="active" onclick="toggle('rgb')">RGB</button>
+      <button id="blinder" onclick="toggle('blinder')">Blinder</button>
+      <button id="strobe" onclick="toggle('strobe')">Strobe</button>
+      <button id="random" onclick="toggle('random')">Random</button>
+    </div>
+    <div class="dancefloor">
+      <div class="top">
+        <div class="strobe">S</div>
+        <div class="blinder">B</div>
+        <div class="blinder">B</div>
+        <div class="blinder">B</div>
+        <div class="blinder">B</div>
+        <div class="blinder">B</div>
+        <div class="strobe">S</div>
+      </div>
+      <div id="fields" class="fields"></div>
+    </div>
+  </body>
+</html>

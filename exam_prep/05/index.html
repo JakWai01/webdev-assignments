@@ -1,0 +1,10 @@
+<button onclick="alert(new Date().getFullYear())">Was?</button>
+
+<script> 
+    let date = new Date().getFullYear()
+
+    window.onload = function () {
+        document.getElementById("year").innerHTML = date
+    }
+</script>
+<p>&copy; <em id="year"></em></p>

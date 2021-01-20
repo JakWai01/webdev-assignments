@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Counter</title>
+
+<script>
+  let count = 0
+  let numClicks = 0
+  function plus() {
+    count = count + 1
+    log();
+  }
+
+  function minus() {
+    /* not implemented */
+    count = count - 1
+    log();
+  }
+
+  function reset() {
+    /* not implemented */
+    count = 0
+    log();
+  }
+
+  function log() {
+    /* not implemented */
+    numClicks = numClicks + 1
+    if (count < 0) {
+      console.error(count)
+    } else {
+      console.log(count)
+    }
+    
+    console.log(numClicks)
+    //console.warn('not implemented');
+  }
+</script>
+
+<div class="wrapper">
+  <div class="actions">
+    <button onclick="plus()">Plus</button>
+    <button onclick="minus()">Minus</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+
+  <div class="result">Ergebnis wird in der Developer-Konsole ausgegeben!</div>
+</div>
+
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .wrapper { padding: 20px; border: 1px solid #eee;
+    display: flex; flex-direction: column; align-items: center; }
+
+  .actions { margin: 10px 0; }
+  button { margin: 10px; }
+  .result { display: flex; align-items: center; }
+  .result span { margin-right: 10px; font-weight: normal; }
+</style>

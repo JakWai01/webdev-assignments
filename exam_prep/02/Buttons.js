@@ -1,0 +1,5 @@
+const big = () => document.getElementById('satz').style = 'font-size: 20px'
+const fat = () => document.getElementById('satz').style = 'font-weight: bold'
+const red = () => document.getElementById('satz').style = 'color: red'
+const cat = () => document.getElementById('cat').src = 'https://http.cat/404'
+const ded = () => document.getElementById('cat').src = ''

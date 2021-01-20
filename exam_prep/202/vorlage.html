@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Mathematische Operatoren</title>
+
+<script>
+  function add() {
+    /* not implemented */
+    document.getElementById("result").innerHTML = Number(document.getElementById("a").value) + Number(document.getElementById("b").value);
+  }
+
+  function subtract() {
+    /* not implemented */
+    document.getElementById("result").innerHTML = Number(document.getElementById("a").value) - Number(document.getElementById("b").value);
+  }
+
+  function multiply() {
+    /* not implemented */
+    document.getElementById("result").innerHTML = Number(document.getElementById("a").value) * Number(document.getElementById("b").value);
+  }
+
+  function divide() {
+    /* not implemented */
+    document.getElementById("result").innerHTML = Number(document.getElementById("a").value) / Number(document.getElementById("b").value);
+  }
+
+  function modulo() {
+    /* not implemented */
+    document.getElementById("result").innerHTML = Number(document.getElementById("a").value) % Number(document.getElementById("b").value);
+  }
+</script>
+
+<div class="calculator">
+  <div class="input">
+    <span>A:</span>
+    <input type="number" id="a" value="10">
+    <span>B:</span>
+    <input type="number" id="b" value="2">
+  </div>
+
+  <div class="actions">
+    <button onclick="add()">Addieren</button>
+    <button onclick="subtract()">Subtrahieren</button>
+    <button onclick="multiply()">Multiplizieren</button>
+    <button onclick="divide()">Dividieren</button>
+    <button onclick="modulo()">Modulo</button>
+  </div>
+
+  <div class="result">
+    <span>Ergebnis:</span>
+    <div id="result"></div>
+  </div>
+</div>
+
+<style>
+  body { min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .calculator { padding: 20px; border: 1px solid #eee; }
+  
+  .actions { margin: 10px 0; }
+  button { margin: 10px; }
+  .result { font-weight: bold; display: flex; align-items: center; }
+  .result span { margin-right: 10px; font-weight: normal; }
+</style>
