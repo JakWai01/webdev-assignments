@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Einen Artikel eines kleinen Online-Shops anzeigen</title>
+
+<main>
+  
+</main>
+
+<script src="articles.js"></script>
+<script>
+  console.log(articles[3]);
+  console.log(articles[3].name)
+
+  for(name in articles[3]) {
+    document.querySelector('main').innerHTML += `<dl><dt>${name}</dt><dd>${articles[3][name]}</dd></dl>`
+  }
+</script>

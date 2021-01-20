@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Artikel hinzufügen und löschen</title>
+
+<main>
+</main>
+
+<script src="articles.js"></script>
+<script>
+  
+  articles.splice(2,1);
+  console.log(articles)
+
+  articles.push({
+    type: 'tablet',
+    name: 'rPad',
+    producer: 'Apple Electronics, Inc.',
+    price: 400,
+    display: '9.7", 2048x1536',
+    os: 'iPadOS 13.2.3',
+    battery: 'Li-Polymer, 8827mAh'
+})
+
+  document.querySelector("main").innerHTML += '<dl>'
+  articles.map(a => {
+    for (name in a) {
+      document.querySelector("main").innerHTML += `<dt>${name}</dt><dd>${a[name]}</dd>`
+    }
+    document.querySelector("main").innerHTML += '<hr>'
+  })
+  document.querySelector("main").innerHTML += '</dl>'
+</script>

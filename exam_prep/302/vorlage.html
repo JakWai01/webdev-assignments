@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Alle Artikel des Shops anzeigen</title>
+
+<main>
+</main>
+
+<script src="articles.js"></script>
+<script>
+  
+  document.querySelector("main").innerHTML += '<dl>'
+  articles.map(a => {
+    for (name in a) {
+      document.querySelector("main").innerHTML += `<dt>${name}</dt><dd>${a[name]}</dd>`
+    }
+    document.querySelector("main").innerHTML += '<hr>'
+  })
+  document.querySelector("main").innerHTML += '</dl>'
+</script>

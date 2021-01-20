@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Artikel sortieren</title>
+
+<main>
+</main>
+
+<script src="articles.js"></script>
+<script>
+    let notebooks = articles.filter(a => a.type == "notebook")
+
+    console.log(notebooks.reduce((a, b) => a + b.price, 0))
+    console.log(notebooks.map(a => a.name))
+</script>  
