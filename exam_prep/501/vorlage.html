@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Elemente finden und ändern</title>
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .wrapper { padding: 20px; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; }
+  .red-border { border: 2px solid red; }
+  img, input { width: 300px; margin: 10px; }
+</style>
+
+<div class="wrapper">
+  <h1 id="title">irrezzistable</h1>
+  <p class="tribore">Tribore</p>
+  <img id="tribore" src="tribore.png">
+  <input value="" name="js-fill" placeholder="js-fill">
+  <p class="gary">Gary</p>
+  <img style="width: 500px" class="gary" src="gary.jpeg">
+  <input value="" name="dont-fill">
+</div>
+
+<script>
+  document.getElementById('title').innerHTML = "Final Space";
+  document.getElementsByClassName('gary')[0].style = 'border: 2px solid blue'
+  document.getElementsByClassName('gary')[1].removeAttribute("style");
+  document.getElementsByName('js-fill')[0].value = "I love Tribore"
+  document.getElementsByTagName("img")[0].classList.add("red-border")
+  document.getElementsByTagName("img")[1].classList.add("red-border")
+  document.getElementById("tribore").setAttribute("alt", "Tr")
+</script>

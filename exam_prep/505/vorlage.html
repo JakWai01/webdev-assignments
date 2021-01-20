@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css">
+    <style> body {margin-left:20px; background-color:rgb(240,240,240)}</style>
+    <script>
+        let isMouseDown = false;
+        
+        function changeColor(event) {
+            const x = event.x - 20;
+            const y = event.y - 100;
+            const canvas = document.getElementById("canvas");
+            if (isMouseDown) {
+                const color = 'rgb(' + x + "," + 100 + "," + y + ")";
+                canvas.style.backgroundColor = color;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Farbänderung bei MouseMove</h2>
+    <div style="position:absolute; left:20px; top:100px; width:255px; height:255px; 
+                background-color:rgb(230,230,230)" id="canvas" onmousedown="isMouseDown=true" onmousemove="changeColor(event)" onmouseup="isMouseDown=false">
+        
+    </div>
+</body>
+</html>

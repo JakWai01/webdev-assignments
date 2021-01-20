@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css">
+    <style>
+        body {
+            margin: 20px;
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+    <script>
+        const primes = [];
+
+        function isPrime(zahl) {
+            for (let i = zahl - 1; i > 1; i--) {
+                if ((zahl % i) == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function generatePrimesArray(max) {
+            const primes = [];
+            for (let i = 2; i <= max; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+            return primes;
+        }
+
+        function makeTable() {
+            const max = parseInt(document.getElementById("max").value);
+            const cols = parseInt(document.getElementById("cols").value);
+            const table = document.getElementById("primes");
+
+            const primes = generatePrimesArray(max);
+            table.innerHTML = "";
+            for (let i = 0; i < primes.length; i += cols) {
+                const primesForCol = primes.slice(i, i + cols);
+                table.innerHTML += "<tr>" + primesForCol.map(p => `<td>${p}</td>`).join("") + "</tr>\n";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Übung zur Vorlesung: Primzahltabelle</h2>
+    <table>
+        <tr>
+            <td><label>Obergrenze:</label></td>
+            <td><input type="text" size="5" id="max"></td>
+        </tr>
+        <tr>
+            <td><label>Spalten:</label></td>
+            <td><input type="text" size="5" id="cols"></td>
+        </tr>
+        <tr>
+            <td><label></label></td>
+            <td><input type="button" value="Go!" onclick="makeTable()"></td>
+        </tr>
+    </table>
+    <br>
+    <table id="primes">
+    </table>
+</body>
+
+</html>

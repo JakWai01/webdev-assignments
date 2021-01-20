@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Elemente hinzufügen und ersetzen</title>
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .wrapper { padding: 20px; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; }
+</style>
+
+<div class="wrapper">
+  <div id="placeholder" style="width:300px; height:200px; background-color: aquamarine;"></div>
+</div>
+
+<script>
+  // Your code goes here
+  const img = document.createElement("img") 
+  img.setAttribute("src", "tribore.png")
+  document.getElementById("placeholder").replaceWith(img); 
+  
+  const h1 = document.createElement("h1")
+  h1.textContent = "Tribore";
+  document.getElementsByClassName("wrapper")[0].prepend(h1);
+</script>

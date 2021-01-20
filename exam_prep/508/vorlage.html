@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Drum Kit</title>
+
+<ul>
+  <li><kbd>B</kbd> (Kickdrum)</li>
+  <li><kbd>H</kbd> (Hi-Hat)</li>
+  <li><kbd>S</kbd> (Snare)</li>
+</ul>
+
+<script>
+  // Your code goes here
+  document.addEventListener('keydown', handleKey);
+
+  function handleKey(e) {
+    console.log(e);
+    if (e.keyCode == 66) {
+      playSound('kick');
+    } else if (e.keyCode == 72) {
+      playSound('hihat');
+    } else if (e.keyCode == 83) {
+      playSound('snare');
+    }
+  }
+
+  // Die Funktion akzeptiert folgende Strings als Parameter: 'kick', 'hihat' und 'snare'
+  function playSound(sound) {
+    const audio = new Audio(`${sound}.mp3`)
+    audio.currentTime = 0
+    audio.play()
+  }
+</script>
+<style>
+  body { min-height: 100vh; margin: 0; padding: 0;
+    display: flex; justify-content: center; align-items: center; }
+  ul { margin: 0; padding: 0; list-style: none; display: flex; }
+  ul > li { margin: 20px; }
+  kbd { font: inherit; font-weight: bold; }
+</style>

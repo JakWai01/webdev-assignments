@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css">
+    <style> body {margin-left:20px; background-color:rgb(240,240,240)}</style>
+    <script>
+        // your code goes here
+        function changeColor(a) {
+            
+            document.getElementById("canvas").style.backgroundColor = `rgb(${document.getElementById("red").value},${document.getElementById("green").value},${document.getElementById("blue").value})`
+        }
+    </script>
+</head>
+<body>
+    <h2>Farbänderung per Slider</h2>
+    <div style="width:255px; height:255px; background-color:rgb(100,100,100)" id="canvas" >
+    </div><br>
+    R:<input style="position:absolute; left:50px" type="range" min="0" max="255" value="100"  
+               id="red" oninput="changeColor('red')"><br>
+    G:<input style="position:absolute; left:50px" type="range" min="0" max="255" value="100" 
+             id="green" oninput="changeColor('green')"><br>
+    B:<input style="position:absolute; left:50px" type="range" min="0" max="255" value="100" 
+             id="blue" oninput="changeColor('blue')"><br>
+</body>
+</html>

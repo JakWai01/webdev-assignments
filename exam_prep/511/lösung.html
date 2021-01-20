@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<title>Pizzaservice</title>
+
+<form action="http://foo.mi.hdm-stuttgart.de:81/WDF/pizza" method=POST id=pizza-formular>
+    <p>
+        <label for=type>Bitte wählen Sie eine Pizza:</label>
+        <select name=type multiple id=type>
+            <option>Pizza Napoli</option>
+            <option>Pizza Funghi</option>
+            <option>Pizza Mare</option>
+            <option>Pizza Tonno</option>
+            <option>Pizza Mexicana</option>
+            <option>Pizza Hawai</option>
+        </select>
+    </p>
+
+    <p>
+        Bitte wählen Sie die Größe der Pizza:
+        <label> <input type=radio name=size value=Klein>  Klein </label>
+        <label> <input type=radio name=size value=Mittel> Mittel </label>
+        <label> <input type=radio name=size value=Groß>   Groß </label>
+    </p>
+
+    <p>
+        Extras:
+        <label> <input type=checkbox name=drink value=Getränk> Getränk </label>
+        <label> <input type=checkbox name=salad value=Salat>   Salat </label>
+    </p>
+
+    <p>
+        Adresse:
+        <textarea name=address></textarea>
+    </p>
+
+    <p>
+        <button>Absenden</button>
+        <button id=zusammenfassung>Zusammenfassung</button>
+    </p>
+</form>
+
+
+<p>
+    Log:
+    <textarea id=log></textarea>
+</p>
+<script>
+    document.getElementById('pizza-formular').addEventListener('change', event => {
+        const log = document.getElementById('log')
+        const checkedState = (event.target.checked !== undefined) ? `(checked ${event.target.checked ? 'true' : 'false'})` : ''
+        log.value = `${event.target.name} changed to "${event.target.value}" ${checkedState}\n` + log.value
+    })
+</script>
+
+
+<p>
+    Zusammenfassung:
+    <textarea id=zusammenfassung-ausgabe></textarea>
+</p>
+<script>
+    document.getElementById('zusammenfassung').addEventListener('click', event => {
+        const ausgabe = document.getElementById('zusammenfassung-ausgabe')
+        for (let formControl of document.forms['pizza-formular'].elements) {
+            const checkedState = (formControl.checked !== undefined) ? `(checked ${formControl.checked ? 'true' : 'false'})` : ''
+            ausgabe.value += `${formControl.name}: "${formControl.value}" ${checkedState}\n`
+        }
+        event.preventDefault()
+    })
+</script>
+
+<script>
+    let nachGrößeGefragt = false
+    document.getElementById('pizza-formular').addEventListener('submit', event => {
+        if ( document.querySelector("form input[name=size]:checked") === null ) {
+            if (!nachGrößeGefragt) {
+                alert("Bitte wählen sie eine Größe aus, sonst wird automatisch Mittel angenommen")
+                nachGrößeGefragt = true
+                event.preventDefault()
+            } else {
+                document.querySelector("form input[name=size][value=Mittel]").checked = true
+            }
+        }
+    })
+</script>
+
+<style>
+    p > label, p > textarea { display: block; }
+    p > label:first-of-type, p > select, p > textarea { margin-top: 0.75em; }
+    textarea { box-sizing: border-box; width: 100%; min-height: 7.5em; }
+</style>
