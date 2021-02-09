@@ -1,0 +1,29 @@
+<input id="zahl1"></input>
+<input id="zahl2"></input>
+<input id="op"></input>
+<button onclick="send()">Send</button>
+
+<script>
+
+    async function send() {
+        let zahl1 = document.querySelector("#zahl1").value
+        let zahl2 = document.querySelector("#zahl2").value
+        let op = document.querySelector("#op").value
+
+        const a = await fetch("http://foo.mi.hdm-stuttgart.de:81/WDF/ajax_calculator_post", {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                zahl1: zahl1, 
+                zahl2: zahl2,
+                op: op
+            })
+        })
+
+        let result = await a.text()
+
+        console.log(result);
+    }
+</script>

@@ -1,0 +1,49 @@
+
+<h1>Jakob Waibel</h1>
+
+<script>
+    let a = 0;
+
+    for (let i = 0; i < 5; i++) {
+        a++;
+    }
+
+    console.log(a)
+
+    let b = [0,1,2,3,4,5]
+
+    b = b.map(a => a + 1)
+    
+    console.log(b)
+
+    for (elem in b) {
+        console.log(elem)
+    }
+
+    for (elem of b) {
+        console.log(elem)
+    }
+
+    let person = {name: 'jakob', age: 19}
+
+    person.age += 1
+    
+    console.log(person)
+
+    for (p in person) {
+        console.log(p)
+    }
+
+    document.querySelector('h1').style.color = "blue";
+
+    let h2 = document.createElement('h2'); 
+
+    h2.innerText = 'nice'
+
+    document.querySelector('h1').append(h2);
+
+    document.querySelector('h2').style.color = 'red';
+
+    console.log(fetch('https://reqres.in/api/users').then(res => res.json()).then(data => console.log(data.data)))
+</script>
+

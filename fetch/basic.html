@@ -1,0 +1,37 @@
+<script>
+    
+    fetch(YOUR_URL).then(res => res.json()).then(data => console.log(data))
+    
+    // POST send to server, it decides what to do with it 
+    fetch(YOUR_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            example_name: "Jaokb",
+            example_email: "j@mail.com"
+        })
+    })
+
+    // Put something at exactly this spot
+    fetch(YOUR_ULR, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: 'jakob',
+            age: 19
+        })
+    })
+
+    // Delete by the link
+    fetch(YOUR_URL, {
+        method: 'DELETE', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify()
+    })
+</script>
